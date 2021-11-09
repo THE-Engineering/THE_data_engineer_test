@@ -20,7 +20,7 @@ def generate_institutions(fake):
             'name': f'University of {city}' if fake.boolean() else f'{city} University',
             'city': city
         })
-    save_file(f'institutions.yml', institutions)
+    save_file(f'institutions.json', institutions)
     return institutions
         
 def generate_subjects(fake):
@@ -49,7 +49,7 @@ def generate_submissions_for_year(fake, year, institutions):
 def generate_files(fake, institutions):
     for year in YEARS:
         submissions = generate_submissions_for_year(fake, year, institutions)
-        save_file(f'submissions_{year}.yml', submissions)
+        save_file(f'submissions_{year}.json', submissions)
 
 
 fake = Faker()
